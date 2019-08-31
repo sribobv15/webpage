@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I H D P S</title>
+  <style>
+  body{
+    background-color: gray;
+    }
+    border{
+      border: justify;
+      border-left: 2px;
+      border-right: 2px;
+        }
+    header{
+   background-color: blue;
+      color: gold;
+      text-align: center;
+      padding: inherit;
+    }
+      h1{
+        font-family: monospace;
+        font-size: 30px;
+      }
+    td
+    {
+      padding:0 15px 0 40px;
+      white-space: pre-line;
+       }
+    p{
+      font-size: 30px;
+      font-family:cursive;
+      color: darkblue;
+      text-align: center;
+    }
+   div{
+      text-align: right;
+    }
+    table{
+      column-gap: 30px;
+      padding: inherit;
+    }
+</style>
+        
+    <script>
+        
+        function result()   
+        {
+
+            var x = document.getElementById("age").value;
+            var y = document.getElementById("BP").value;
+            var z = document.getElementById("fbp").value;
+        
+            
+            if(x>44 && y=="1" && z=="1")
+            {
+
+                document.getElementById("output").innerHTML = "Heart Disease";
+            }
+            else    {
+                document.getElementById("output").innerHTML = "No Heart Disease";
+            }
+            
+        }
+        function exit()
+        {
+        window.close();    
+            
+        }
+        
+
+    </script>
+    
+    
+  </head>
+  <body>
+   <header>
+  <h1>Intelligent Heart Disease Predection System</h1>
+  </header>
+    <form>
+  <table border="1">
+    <tr>
+        <td>Enter Name <input type="text" id="name"></td>
+        <td>ECG of patient in rest
+            <select>
+                <option value="" disabled="disabled" selected="selected">ST-t wave normal</option>
+                <option value="1">cos-t wave</option>
+                <option value="2">tan wave</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Enter Age <input type="number" id="age"></td>
+        <td>Maximum HeartRate Achieved<input type="number" id="HeartRate"> </td>
+    </tr>
+    <tr>
+        <td>  Select Gender 
+            <input type="radio" name="gender" value="male" checked>Male<br>
+            <input type="radio" name="gender" value="female"> Female<br>
+            <input type="radio" name="gender" value="other"> other<br>
+        </td>
+        <td>Exercised Induced Angina?
+            <select>
+                <option value="" disabled="disabled" selected="selected">None</option>
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Chest Pain Type
+            <select>
+                <option value="" disabled="disabled" selected="selected">PLEASE SELECT THE PAIN TYPE</option>
+                <option value="1">typical angina</option>
+                <option value="2">myocarditis</option>
+                <option value="3">pericarditis</option>
+            </select>
+        </td>
+        <td>ST depression induced by Exercise <input type="number" id="depression"></td>
+    </tr>
+    <tr>    
+        <td>Resting Blood Pressure <input type="number" id="BP">mm/hg</td>
+        <td>The slope of peak Exercise
+            <select>
+                <option value="" disabled="disabled" selected="selected">Up sloping</option>
+                <option value="1">Down sloping</option>
+                <option value="2">parallel</option>
+            </select>
+        </td>
+      </tr>
+      <tr>
+            <td>Serum cholestrol<input type="number" id="cholestrol">mg/dl</td>
+            <td>Thal 
+                <select>
+                    <option value="" disabled="disabled" selected="selected">Normal</option>
+                    <option value="1">High</option>
+                    <option value="2">Low</option>
+              </select>
+            </td>
+      </tr>
+      <tr>
+            <td>Fasting Blood Sugar Yes if>120..
+                <select id="fbp">
+                    <option value="0" disabled="disabled" selected="selected">None</option>
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                </select>
+            </td>
+            <td>Number Of Major Vessels Colored..<input type="number" id="number"></td>
+      </tr>
+    </table>
+    </form>
+    <p id="output"> </p>
+      
+    <div>
+        <button type="button" onclick="result()"> Predict </button> 
+        <button type="button" onclick="exit()"> Exit </button>
+    </div>
+
+</body>
+</html>
